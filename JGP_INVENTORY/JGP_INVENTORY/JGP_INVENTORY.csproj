@@ -155,5 +155,18 @@
     <Resource Include="Images\oc_share_close.png" />
     <Resource Include="Images\unnamed.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\blue.png" />
+    <Resource Include="Images\cancel %281%29.png" />
+    <Resource Include="Images\cancel.png" />
+    <Resource Include="Images\closered.png" />
+    <Resource Include="Images\darkblue.png" />
+    <Resource Include="Images\exit.png" />
+    <Resource Include="Images\house.png" />
+    <Resource Include="Images\icon.png" />
+    <Resource Include="Images\icon_dark.png" />
+    <Resource Include="Images\shopping-cart.png" />
+    <Resource Include="Images\user.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,8 +11,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
-using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using MySql.Data.MySqlClient;
+using System.Configuration;
+using JGP_INVENTORY.ViewModel;
 
 namespace JGP_INVENTORY.View
 {
@@ -21,6 +23,10 @@ namespace JGP_INVENTORY.View
     /// </summary>
     public partial class Registration : Window
     {
+        MySqlConnection conn = new
+        MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+        ProductViewModel vm = new ProductViewModel();
+
         public Registration()
         {
             InitializeComponent();
@@ -40,10 +46,10 @@ namespace JGP_INVENTORY.View
 
         public void Reset()
         {
-            textBoxFirstName.Text = "";
-            textBoxLastName.Text = "";
+            //textBoxFirstName.Text = "";
+           // textBoxLastName.Text = "";
             textBoxEmail.Text = "";
-            textBoxAddress.Text = "";
+          //  textBoxAddress.Text = "";
             passwordBox1.Password = "";
             passwordBoxConfirm.Password = "";
         }
@@ -54,52 +60,25 @@ namespace JGP_INVENTORY.View
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            if (textBoxEmail.Text.Length == 0)
+            String text;
+           text = vm.CallRegister(textBoxEmail.Text, passwordBox1.Password, passwordBoxConfirm.Password);
+            if(text == "Enter a username.")
             {
-                errormessage.Text = "Enter an email.";
                 textBoxEmail.Focus();
-            }
-            else if (!Regex.IsMatch(textBoxEmail.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
+            }else if(text == "Enter password.")
             {
-                errormessage.Text = "Enter a valid email.";
-                textBoxEmail.Select(0, textBoxEmail.Text.Length);
-                textBoxEmail.Focus();
-            }
-            else
+                passwordBox1.Focus();
+            }else if(text == "Enter Confirm password")
             {
-                string firstname = textBoxFirstName.Text;
-                string lastname = textBoxLastName.Text;
-                string email = textBoxEmail.Text;
-                string password = passwordBox1.Password;
-                if (passwordBox1.Password.Length == 0)
-                {
-                    errormessage.Text = "Enter password.";
-                    passwordBox1.Focus();
-                }
-                else if (passwordBoxConfirm.Password.Length == 0)
-                {
-                    errormessage.Text = "Enter Confirm password.";
-                    passwordBoxConfirm.Focus();
-                }
-                else if (passwordBox1.Password != passwordBoxConfirm.Password)
-                {
-                    errormessage.Text = "Confirm password must be same as password.";
-                    passwordBoxConfirm.Focus();
-                }
-                else
-                {
-                    errormessage.Text = "";
-                    string address = textBoxAddress.Text;
-                    SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("Insert into Registration (FirstName,LastName,Email,Password,Address) values('" + firstname + "','" + lastname + "','" + email + "','" + password + "','" + address + "')", con);
-                    cmd.CommandType = CommandType.Text;
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    errormessage.Text = "You have Registered successfully.";
-                    Reset();
-                }
+                passwordBoxConfirm.Focus();
+            }else if (text == "Confirm password must be same as password.")
+            {
+                passwordBoxConfirm.Focus();
+            }else if(text == "")
+            {
+                Reset();
+            }
+            errormessage.Text = text;
             }
         }
     }
-}
