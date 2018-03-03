@@ -1,67 +1,4 @@
-﻿
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -95,6 +32,23 @@ namespace JGP_INVENTORY.View
         private void View_Prod(object sender, RoutedEventArgs e)
         {
             Main.Content = new Page2();
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+            //Close();
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+
+        private void Image_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }

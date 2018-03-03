@@ -46,5 +46,13 @@ namespace JGP_INVENTORY.ViewModel
         {
             return crud.DisplayProduct();
         }
+        public String CallRegister(String user, String Pass, String ConfirmPass)
+        {
+            return crud.Register(user, Pass, ConfirmPass);
+        }
+        public String CallLogin(String User, String Pass)
+        {
+            return crud.Login(User, Pass);
+        }
     }
 }
