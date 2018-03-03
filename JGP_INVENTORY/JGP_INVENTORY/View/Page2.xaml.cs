@@ -83,7 +83,9 @@ namespace JGP_INVENTORY.View
                 try
                 {
                     // get the selected's infomation first
-                    vm.CallEditProduct(editName, editQuantity, editPrice, int.Parse(dataGridCustomers.SelectedCells.IndexOf(0x0).ToString());
+                    /*
+                      vm.CallEditProduct(editName, editQuantity, editPrice, int.Parse(dataGridCustomers.SelectedCells.IndexOf(0x0).ToString());
+                    */
                 }catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
