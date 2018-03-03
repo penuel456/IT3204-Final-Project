@@ -16,14 +16,14 @@ namespace JGP_INVENTORY.Model
         MySqlConnection conn = new
         MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
 
-        public void AddProduct(String prod_name, int prod_qty, String prod_price, int prod_id)
+        public void AddProduct(String prod_name, int prod_qty, int prod_price)
         {
-            SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO product (prod_name, prod_qty, prod_price, prod_id) VALUES ('"+prod_name+"', '"+prod_qty+"', '"+prod_price+"', NULL)", con);
+            //SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO product (prod_name, prod_qty, prod_price, prod_id) VALUES ('"+prod_name+"', '"+prod_qty+"', '"+prod_price+"', NULL)", conn);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
-            con.Close();
+            conn.Close();
         }
         public void EditProduct(String prod_name, int prod_qty, String prod_price, int prod_id)
         {
@@ -34,14 +34,14 @@ namespace JGP_INVENTORY.Model
             cmd.ExecuteNonQuery();
             con.Close();
         }
-        public void DeleteProduct(int prod_id)
+        public void DeleteProduct(String prod_name)
         {
-            SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM product WHERE prod_id = " + prod_id, con);
+           // SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM product WHERE prod_name = '" +prod_name+"'", conn);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
-            con.Close();
+            conn.Close();
         }
         public DataSet SearchProduct(String prod_name)
         {
