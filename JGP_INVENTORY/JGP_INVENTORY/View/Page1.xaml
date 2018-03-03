@@ -1,0 +1,15 @@
+﻿<Page x:Class="JGP_INVENTORY.View.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JGP_INVENTORY.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Page1">
+
+    <Grid>
+        <Label x:Name="Welcome" Content="Welcome User" HorizontalAlignment="Left" Height="35" Margin="56,120,0,0" VerticalAlignment="Top" Width="175" FontSize="18" Foreground="#FFD08805"/>
+
+    </Grid>
+</Page>
