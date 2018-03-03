@@ -21,9 +21,9 @@ namespace JGP_INVENTORY.ViewModel
             return !regex.IsMatch(text);
         }
 
-        public void CallAddProduct(String prod_name, int prod_qty, String prod_price, int prod_id)
+        public void CallAddProduct(String prod_name, int prod_qty, int prod_price)
         {
-            crud.AddProduct(prod_name, prod_qty, prod_price, prod_id);
+            crud.AddProduct(prod_name, prod_qty, prod_price);
         }
 
         public void CallEditProduct(String prod_name, int prod_qty, String prod_price, int prod_id)
@@ -34,9 +34,9 @@ namespace JGP_INVENTORY.ViewModel
             }
         }
 
-        public void CallDeleteProduct(int prod_id)
+        public void CallDeleteProduct(String prod_name)
         {
-            crud.DeleteProduct(prod_id);
+            crud.DeleteProduct(prod_name);
         }
         public DataSet CallSearchProduct(String prod_name)
         {
