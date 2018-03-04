@@ -25,18 +25,45 @@ namespace JGP_INVENTORY.Model
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-        public void EditProduct(String prod_name, int prod_qty, String prod_price, int prod_id)
+        public String[] EditProduct(int prod_id)
         {
+            /*
             SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
             con.Open();
+            */
+            String[] list = new String[4];
+            /*
             SqlCommand cmd = new SqlCommand("UPDATE product SET prod_name = "+prod_name+", prod_qty = "+prod_qty+" , prod_price = "+prod_price+" WHERE prod_id = "+prod_id , con);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
             con.Close();
+            */
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM product WHERE prod_id = " + prod_id, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.HasRows)
+                {
+                    list[0] = (string)reader[0];
+                    list[1] = (string)reader[1];
+                    list[2] = (string)reader[2];
+                    list[3] = (string)reader[3];
+                }
+            }
+            catch (Exception ex)
+            {
+                list[0] = " ";
+                list[1] = ex.ToString();
+                list[2] = " ";
+                list[3] = " ";
+            }
+
+            return list;
         }
         public void DeleteProduct(String prod_name)
         {
-           // SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
             conn.Open();
             MySqlCommand cmd = new MySqlCommand("DELETE FROM product WHERE prod_name = '" +prod_name+"'", conn);
             cmd.CommandType = CommandType.Text;
