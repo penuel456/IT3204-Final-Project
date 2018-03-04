@@ -10,7 +10,6 @@ using JGP_INVENTORY.Model;
 namespace JGP_INVENTORY.ViewModel
 {
 
-
     class ProductViewModel
     {
         CRUDProduct crud = new CRUDProduct();
@@ -26,12 +25,9 @@ namespace JGP_INVENTORY.ViewModel
             crud.AddProduct(prod_name, prod_qty, prod_price);
         }
 
-        public void CallEditProduct(String prod_name, int prod_qty, String prod_price, int prod_id)
+        public String[] CallEditProduct(int prod_id)
         {
-            if (IsTextAllowed(prod_price))
-            {
-                crud.EditProduct(prod_name, prod_qty, prod_price, prod_id);
-            }
+            return crud.EditProduct(prod_id); 
         }
 
         public void CallDeleteProduct(String prod_name)

@@ -28,6 +28,7 @@ namespace JGP_INVENTORY.View
         MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
         ProductViewModel vm = new ProductViewModel();
         addProduct addprod = new addProduct();
+        editProduct editprod = new editProduct();
         DeleteProduct delprod = new DeleteProduct();
         public Page2()
         {
@@ -41,15 +42,6 @@ namespace JGP_INVENTORY.View
                 // Model to execute these codes below and return the results here
 
                 dataGridCustomers.DataContext = vm.CallDisplayProduct();
-                
-                /*
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM product", conn);
-                MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adp.Fill(ds, "LoadDataBinding");
-                dataGridCustomers.DataContext = ds;
-                */
             }
             catch (MySqlException ex)
             {
@@ -92,6 +84,11 @@ namespace JGP_INVENTORY.View
         private void deleteBtn_Click(object sender, RoutedEventArgs e)
         {
             delprod.Show();
+        }
+
+        private void editBtn_Click(object sender, RoutedEventArgs e)
+        {
+            editprod.Show();
         }
     }
 }
