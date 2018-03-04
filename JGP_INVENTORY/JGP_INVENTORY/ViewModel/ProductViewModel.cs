@@ -25,9 +25,9 @@ namespace JGP_INVENTORY.ViewModel
             crud.AddProduct(prod_name, prod_qty, prod_price);
         }
 
-        public String[] CallEditProduct(int prod_id)
+        public void CallEditProduct(int prod_id, String prod_name, String prod_qty, String prod_price)
         {
-            return crud.EditProduct(prod_id); 
+            crud.EditProduct(prod_id, prod_name, prod_qty, prod_price); 
         }
 
         public void CallDeleteProduct(String prod_name)

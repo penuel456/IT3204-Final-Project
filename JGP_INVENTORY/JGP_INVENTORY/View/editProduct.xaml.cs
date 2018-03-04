@@ -29,9 +29,10 @@ namespace JGP_INVENTORY.View
 
         private void editBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(prod_id.Text != null || prod_id.Text != "")
+            if(prod_id.Text != null && prod_name.Text != null && prod_qty != null && prod_price != null)
             {
-                vm.CallEditProduct(int.Parse(prod_id.Text));
+                vm.CallEditProduct(int.Parse(prod_id.Text), prod_name.Text, prod_qty.Text, prod_price.Text);
+                Hide();
             }
         }
     }

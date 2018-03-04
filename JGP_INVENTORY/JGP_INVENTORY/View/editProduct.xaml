@@ -10,8 +10,14 @@
         <Button Content="Back" HorizontalAlignment="Left" Margin="207,10,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="editBtn" Content="Edit" HorizontalAlignment="Left" Margin="111,232,0,0" VerticalAlignment="Top" Width="75" Click="editBtn_Click"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="192" Margin="17,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="265"/>
-        <Label Content="Input the ID of the product you want to Edit" HorizontalAlignment="Left" Margin="25,70,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="prod_id" HorizontalAlignment="Left" Height="23" Margin="25,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242"/>
+        <Label Content="Product ID:" HorizontalAlignment="Left" Margin="28,43,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="prod_id" HorizontalAlignment="Left" Height="23" Margin="140,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+        <Label Content="Product Name:" HorizontalAlignment="Left" Margin="28,84,0,0" VerticalAlignment="Top"/>
+        <Label Content="Product Quantity:" HorizontalAlignment="Left" Margin="28,123,0,0" VerticalAlignment="Top"/>
+        <Label Content="Product Price:" HorizontalAlignment="Left" Margin="28,165,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="prod_name" HorizontalAlignment="Left" Height="23" Margin="140,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+        <TextBox x:Name="prod_qty" HorizontalAlignment="Left" Height="23" Margin="140,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+        <TextBox x:Name="prod_price" HorizontalAlignment="Left" Height="23" Margin="140,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
 
     </Grid>
 </Window>

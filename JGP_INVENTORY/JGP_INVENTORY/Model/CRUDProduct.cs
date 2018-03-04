@@ -15,74 +15,40 @@ namespace JGP_INVENTORY.Model
     {
         MySqlConnection conn = new
         MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+        String query;
 
         public void AddProduct(String prod_name, int prod_qty, int prod_price)
         {
-            //SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
+            query = "INSERT INTO product (prod_name, prod_qty, prod_price, prod_id) VALUES ('" + prod_name + "', '" + prod_qty + "', '" + prod_price + "', NULL)";
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO product (prod_name, prod_qty, prod_price, prod_id) VALUES ('"+prod_name+"', '"+prod_qty+"', '"+prod_price+"', NULL)", conn);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-        public String[] EditProduct(int prod_id)
+        public void EditProduct(int prod_id, String prod_name, String prod_qty, String prod_price)
         {
-            /*
-            SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
-            con.Open();
-            */
-            String[] list = new String[4];
-            /*
-            SqlCommand cmd = new SqlCommand("UPDATE product SET prod_name = "+prod_name+", prod_qty = "+prod_qty+" , prod_price = "+prod_price+" WHERE prod_id = "+prod_id , con);
+            query = "UPDATE product SET prod_name = '"+prod_name+"', prod_qty = "+prod_qty+", prod_price = "+prod_price+" WHERE prod_id = "+prod_id;
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
-            con.Close();
-            */
-            try
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM product WHERE prod_id = " + prod_id, conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.HasRows)
-                {
-                    list[0] = (string)reader[0];
-                    list[1] = (string)reader[1];
-                    list[2] = (string)reader[2];
-                    list[3] = (string)reader[3];
-                }
-            }
-            catch (Exception ex)
-            {
-                list[0] = " ";
-                list[1] = ex.ToString();
-                list[2] = " ";
-                list[3] = " ";
-            }
-
-            return list;
+            conn.Close();
         }
         public void DeleteProduct(String prod_name)
         {
+            query = "DELETE FROM product WHERE prod_name = '" + prod_name + "'";
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("DELETE FROM product WHERE prod_name = '" +prod_name+"'", conn);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
             conn.Close();
         }
         public DataSet SearchProduct(String prod_name)
         {
-            /*
-            SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM product WHERE prod_name = "+prod_name, con);
-            cmd.CommandType = CommandType.Text;
-            cmd.ExecuteNonQuery();
-            con.Close();
-            */
-
+            query = "SELECT * FROM product WHERE prod_name LIKE '%" + prod_name + "%'";
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM product WHERE prod_name LIKE '%"+prod_name+"%'", conn);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             adp.Fill(ds, "LoadDataBinding");
@@ -91,17 +57,9 @@ namespace JGP_INVENTORY.Model
         }
         public DataSet DisplayProduct()
         {
-            /*
-            SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM product", con);
-            cmd.CommandType = CommandType.Text;
-            cmd.ExecuteNonQuery();
-            con.Close();
-            */
-
+            query = "SELECT * FROM product";
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM product", conn);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             adp.Fill(ds, "LoadDataBinding");
@@ -153,6 +111,7 @@ namespace JGP_INVENTORY.Model
                     text = "";
                     // string address = textBoxAddress.Text;
                     // SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
+                    query = "INSERT INTO users (Username,Password) VALUES('" + email + "','" + password + "')";
                     conn.Open();
 
                     // Call the function from the View Model, then the View Model will call the 
@@ -168,7 +127,7 @@ namespace JGP_INVENTORY.Model
                     adp.Fill(ds, "LoadDataBinding");
                     dataGridCustomers.DataContext = ds;
                     */
-                    MySqlCommand cmd = new MySqlCommand("Insert into users (Username,Password) values('" + email + "','" + password + "')", conn);
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -192,8 +151,9 @@ namespace JGP_INVENTORY.Model
                 string email = User;
                 string password = Pass;
                 // SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
+                query = "SELECT * FROM users WHERE username='" + email + "'  AND password='" + password + "'";
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("Select * from users where username='" + email + "'  and password='" + password + "'", conn);
+                MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.CommandType = CommandType.Text;
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = cmd;
