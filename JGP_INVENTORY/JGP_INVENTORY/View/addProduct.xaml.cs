@@ -51,7 +51,6 @@ namespace JGP_INVENTORY.View
             prodName.Text = "";
             prodQty.Text = "0";
             prodPrice.Text = "0";
-            //Hide();
         }
     }
 }
