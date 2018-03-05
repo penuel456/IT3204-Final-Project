@@ -20,9 +20,9 @@ namespace JGP_INVENTORY.ViewModel
             return !regex.IsMatch(text);
         }
 
-        public void CallAddProduct(String prod_name, int prod_qty, int prod_price)
+        public String CallAddProduct(String prod_name, int prod_qty, int prod_price)
         {
-            crud.AddProduct(prod_name, prod_qty, prod_price);
+            return crud.AddProduct(prod_name, prod_qty, prod_price);
         }
 
         public void CallEditProduct(int prod_id, String prod_name, String prod_qty, String prod_price)
