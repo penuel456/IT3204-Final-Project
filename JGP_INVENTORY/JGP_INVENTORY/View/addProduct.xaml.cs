@@ -44,9 +44,7 @@ namespace JGP_INVENTORY.View
         private void insertBtn_Click_1(object sender, RoutedEventArgs e)
         {
             string text;
-            int qty = Int32.Parse(prodQty.Text);
-            int price = Int32.Parse(prodPrice.Text);
-            text = vm.CallAddProduct(prodName.Text, qty, price);
+            text = vm.CallAddProduct(prodName.Text, Int32.Parse(prodQty.Text), Int32.Parse(prodPrice.Text));
 
             notif.Text = text;
 
