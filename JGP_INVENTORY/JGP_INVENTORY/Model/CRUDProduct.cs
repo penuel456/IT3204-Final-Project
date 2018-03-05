@@ -16,15 +16,44 @@ namespace JGP_INVENTORY.Model
         MySqlConnection conn = new
         MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
         String query;
+        String query2;
 
-        public void AddProduct(String prod_name, int prod_qty, int prod_price)
+        public String AddProduct(String prod_name, int prod_qty, int prod_price)
         {
-            query = "INSERT INTO product (prod_name, prod_qty, prod_price, prod_id) VALUES ('" + prod_name + "', '" + prod_qty + "', '" + prod_price + "', NULL)";
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.CommandType = CommandType.Text;
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            string text;
+
+            if (string.IsNullOrEmpty(prod_name) || prod_qty == 0 || prod_price == 0)
+            {
+                text = "Please don't leave any of the text fields empty.";
+                return text;
+            }
+            else
+            {
+                query = "INSERT INTO product (prod_name, prod_qty, prod_price, prod_id) VALUES ('" + prod_name + "', '" + prod_qty + "', '" + prod_price + "', NULL)";
+                query2 = "SELECT COUNT(*) FROM product WHERE prod_name = '" + prod_name + "' ";
+                conn.Open();
+                MySqlCommand cmdcheck = new MySqlCommand(query2, conn);
+                cmdcheck.CommandType = CommandType.Text;
+                int count = Convert.ToInt32(cmdcheck.ExecuteScalar());
+                if (count == 0)
+                {
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    text = "Successfully added the product into the inventory.";
+                    return text;
+                }
+                else
+                {
+                    text = "Record already exists.";
+                    conn.Close();
+                    return text;
+                }
+
+
+            }
         }
         public void EditProduct(int prod_id, String prod_name, String prod_qty, String prod_price)
         {

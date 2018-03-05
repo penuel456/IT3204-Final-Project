@@ -32,17 +32,25 @@ namespace JGP_INVENTORY.View
         ProductViewModel vm = new ProductViewModel();
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {
+
+            prodName.Text = "";
+            prodQty.Text = "0";
+            prodPrice.Text = "0";
+
             Hide();
         }
         
 
         private void insertBtn_Click_1(object sender, RoutedEventArgs e)
         {
-            int qty = Int32.Parse(prodQty.Text);
-            int price = Int32.Parse(prodPrice.Text);
-            vm.CallAddProduct(prodName.Text, qty, price);
+            string text;
+            text = vm.CallAddProduct(prodName.Text, Int32.Parse(prodQty.Text), Int32.Parse(prodPrice.Text));
 
-            Hide();
+            notif.Text = text;
+
+            prodName.Text = "";
+            prodQty.Text = "0";
+            prodPrice.Text = "0";
         }
     }
 }
