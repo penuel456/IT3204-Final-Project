@@ -17,7 +17,7 @@
         <Label Content="PRODUCTS" HorizontalAlignment="Left" Height="62" Margin="34,10,0,0" VerticalAlignment="Top" Width="193" FontSize="24" Background="{x:Null}" Foreground="#FFD08805"/>
         <Grid HorizontalAlignment="Left" Height="310" VerticalAlignment="Top" Width="684" Margin="0,0,0,-20.4" Grid.RowSpan="3">
             <DataGrid AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="41,73,0,26"
-Name="dataGridCustomers" Width="604" ItemsSource="{Binding Path=LoadDataBinding}"
+Name="dataGridCustomers" Width="608" ItemsSource="{Binding Path=LoadDataBinding}"
 CanUserResizeRows="False" Background="#FFF6F6E2" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}" AlternatingRowBackground="#FFF6F6E2" RowBackground="#FFE5CF0B">
 
                 <DataGrid.Columns>
