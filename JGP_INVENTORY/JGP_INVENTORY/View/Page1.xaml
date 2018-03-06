@@ -9,7 +9,7 @@
       Title="Page1">
 
     <Grid>
-        <Label x:Name="Welcome" Content="Welcome User" HorizontalAlignment="Left" Height="35" Margin="56,120,0,0" VerticalAlignment="Top" Width="175" FontSize="18" Foreground="#FFD08805"/>
+        <Label x:Name="Welcome_Label" Content="Welcome User" HorizontalAlignment="Left" Height="35" Margin="10,22,0,0" VerticalAlignment="Top" Width="175" FontSize="18" Foreground="#FFD08805"/>
 
     </Grid>
 </Page>

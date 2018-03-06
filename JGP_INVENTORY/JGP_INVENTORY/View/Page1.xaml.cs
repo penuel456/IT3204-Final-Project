@@ -19,9 +19,10 @@ namespace JGP_INVENTORY.View
     /// </summary>
     public partial class Page1 : Page
     {
-        public Page1()
+        public Page1(String test)
         {
             InitializeComponent();
+            Welcome_Label.Content = test;
         }
     }
 }

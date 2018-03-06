@@ -8,7 +8,7 @@
       d:DesignHeight="300"
       Title="Page2" Width="760">
 
-    <Grid Margin="10,10,0,0">
+    <Grid Margin="10,10,10,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="119*"/>
             <RowDefinition Height="61*"/>
