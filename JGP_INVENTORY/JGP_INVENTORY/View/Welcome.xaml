@@ -21,7 +21,7 @@
                 <Image HorizontalAlignment="Left" Height="66" Margin="25,68,0,0" VerticalAlignment="Top" Width="65" Source="/JGP_INVENTORY;component/Images/user.png"/>
             </Grid>
             <!--<Button Content="&#x9;Logout" Height="31" HorizontalAlignment="Left" Margin="-3,225,0,0" x:Name="logoutbtn" VerticalAlignment="Top" Width="117" Background="#FFE2B409" Foreground="#FFF0EEEE" BorderBrush="{x:Null}" />-->
-            <Button Content="&#x9;Logout" Height="31" HorizontalAlignment="Left" Margin="-3,225,0,0" x:Name="logoutbtn" VerticalAlignment="Top" Width="117" Foreground="#FFF0EEEE" BorderBrush="{x:Null}" >
+            <Button Content="&#x9;Logout" Height="31" HorizontalAlignment="Left" Margin="-3,225,0,0" x:Name="logoutbtn" VerticalAlignment="Top" Width="117" Foreground="#FFF0EEEE" BorderBrush="{x:Null}" Click="logoutbtn_Click" >
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Background" Value="#FFE2B409"/>

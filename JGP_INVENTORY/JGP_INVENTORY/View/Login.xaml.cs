@@ -31,7 +31,7 @@ namespace JGP_INVENTORY.View
         MySqlConnection conn = new
        MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
         ProductViewModel vm = new ProductViewModel();
-        Page1 page = new Page1();
+      //  Page1 page = new Page1();
 
         public Login()
         {

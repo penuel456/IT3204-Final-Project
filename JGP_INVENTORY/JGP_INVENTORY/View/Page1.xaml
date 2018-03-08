@@ -9,7 +9,8 @@
       Title="Page1">
 
     <Grid>
-        <Label x:Name="Welcome" Content="Welcome User" HorizontalAlignment="Left" Height="35" Margin="56,120,0,0" VerticalAlignment="Top" Width="175" FontSize="18" Foreground="#FFD08805"/>
+        <Label x:Name="Welcome_Label" Content="Welcome User" HorizontalAlignment="Left" Height="35" Margin="10,22,0,0" VerticalAlignment="Top" Width="175" FontSize="18" Foreground="#FFD08805"/>
+        <Image HorizontalAlignment="Left" Height="49" Margin="165,201,0,0" VerticalAlignment="Top" Width="54" Source="/JGP_INVENTORY;component/Images/plus.png" RenderTransformOrigin="0.052,0.703"/>
 
     </Grid>
 </Page>
