@@ -21,12 +21,15 @@ namespace JGP_INVENTORY.View
         public Welcome()
         {
             InitializeComponent();
-           
+            String test = "Welcome ";
+          Main.Content = new Page1(test);
+
         }
 
         private void logout_Btn1(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Page1();
+            String test = "Welcome " + Label.Content.ToString();
+            Main.Content = new Page1(test);
         }
 
         private void View_Prod(object sender, RoutedEventArgs e)
@@ -49,6 +52,11 @@ namespace JGP_INVENTORY.View
         private void Image_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+        }
+
+        private void logoutbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
