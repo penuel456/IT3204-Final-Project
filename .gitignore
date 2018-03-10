@@ -298,3 +298,8 @@ __pycache__/
 
 
 # End of https://www.gitignore.io/api/visualstudio
+*.Cache
+JGP_INVENTORY/.vs/JGP_INVENTORY/v15/.suo
+*.ide
+*.pdb
+*.exe

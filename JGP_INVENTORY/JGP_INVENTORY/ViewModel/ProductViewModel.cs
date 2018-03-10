@@ -25,6 +25,11 @@ namespace JGP_INVENTORY.ViewModel
             return crud.AddProduct(prod_name, prod_qty, prod_price);
         }
 
+        public List<ProductData> CallGetProductData(int prod_id)
+        {
+            return crud.GetProductData(prod_id);
+        }
+
         public void CallEditProduct(int prod_id, String prod_name, String prod_qty, String prod_price)
         {
             crud.EditProduct(prod_id, prod_name, prod_qty, prod_price); 

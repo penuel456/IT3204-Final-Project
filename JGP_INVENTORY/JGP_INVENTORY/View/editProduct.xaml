@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JGP_INVENTORY.View"
         mc:Ignorable="d"
+         
         Title="editProduct" Height="427.841" Width="423.579" Background="{x:Null}" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown">
     <Grid Background="#FFE5CF0B" Margin="0,84,71,50" HorizontalAlignment="Right" Width="297">
         <Grid.ColumnDefinitions>
@@ -63,6 +64,5 @@
         <TextBox x:Name="prod_qty" HorizontalAlignment="Left" Height="23" Margin="140,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Grid.ColumnSpan="2"/>
         <TextBox x:Name="prod_price" HorizontalAlignment="Left" Height="23" Margin="140,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Grid.ColumnSpan="2"/>
         <Image HorizontalAlignment="Left" Height="82" Margin="-19,-53,0,0" VerticalAlignment="Top" Width="92" Source="/JGP_INVENTORY;component/Images/edit.png"/>
-
     </Grid>
 </Window>
