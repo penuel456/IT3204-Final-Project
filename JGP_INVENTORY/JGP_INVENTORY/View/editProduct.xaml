@@ -5,19 +5,64 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JGP_INVENTORY.View"
         mc:Ignorable="d"
-        Title="editProduct" Height="300" Width="300">
-    <Grid>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="207,10,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="editBtn" Content="Edit" HorizontalAlignment="Left" Margin="111,232,0,0" VerticalAlignment="Top" Width="75" Click="editBtn_Click"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="192" Margin="17,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="265"/>
-        <Label Content="Product ID:" HorizontalAlignment="Left" Margin="28,43,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="prod_id" HorizontalAlignment="Left" Height="23" Margin="140,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
-        <Label Content="Product Name:" HorizontalAlignment="Left" Margin="28,84,0,0" VerticalAlignment="Top"/>
-        <Label Content="Product Quantity:" HorizontalAlignment="Left" Margin="28,123,0,0" VerticalAlignment="Top"/>
-        <Label Content="Product Price:" HorizontalAlignment="Left" Margin="28,165,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="prod_name" HorizontalAlignment="Left" Height="23" Margin="140,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
-        <TextBox x:Name="prod_qty" HorizontalAlignment="Left" Height="23" Margin="140,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
-        <TextBox x:Name="prod_price" HorizontalAlignment="Left" Height="23" Margin="140,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+        Title="editProduct" Height="427.841" Width="423.579" Background="{x:Null}" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown">
+    <Grid Background="#FFE5CF0B" Margin="0,84,71,50" HorizontalAlignment="Right" Width="297">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="233*"/>
+            <ColumnDefinition Width="59*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="207,10,0,0" VerticalAlignment="Top" Width="75" Height="20" Foreground="White" Grid.ColumnSpan="2" Click="Button_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFEB850F"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="2">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFB46A14"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="editBtn" Content="Edit" HorizontalAlignment="Left" Margin="111,232,0,0" VerticalAlignment="Top" Width="75" Click="editBtn_Click" Height="19" Foreground="White">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFEB850F"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="2">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFB46A14"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Rectangle HorizontalAlignment="Left" Height="192" Margin="17,35,0,0" VerticalAlignment="Top" Width="265" Fill="#FFEB850F" Grid.ColumnSpan="2"/>
+        <Label Content="Product ID:" HorizontalAlignment="Left" Margin="28,43,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="prod_id" HorizontalAlignment="Left" Height="23" Margin="140,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Grid.ColumnSpan="2"/>
+        <Label Content="Product Name:" HorizontalAlignment="Left" Margin="28,84,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Product Quantity:" HorizontalAlignment="Left" Margin="28,123,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Product Price:" HorizontalAlignment="Left" Margin="28,165,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="prod_name" HorizontalAlignment="Left" Height="23" Margin="140,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="prod_qty" HorizontalAlignment="Left" Height="23" Margin="140,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="prod_price" HorizontalAlignment="Left" Height="23" Margin="140,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="82" Margin="-19,-53,0,0" VerticalAlignment="Top" Width="92" Source="/JGP_INVENTORY;component/Images/edit.png"/>
 
     </Grid>
 </Window>

@@ -5,12 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JGP_INVENTORY.View"
         mc:Ignorable="d"
-        Title="DeleteProduct" Height="209.268" Width="300" SizeToContent="WidthAndHeight">
-    <Grid>
-        <Label Content="Input the name of the product you want &#xD;&#xA;to remove:" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Height="50" Width="274" FontSize="14"/>
-        <TextBox x:Name="prodName" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Margin="71,104,0,0"/>
-        <Button x:Name="removeBtn" Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="103,143,0,0" Click="removeBtn_Click"/>
-        <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="193,10,0,0" Click="backBtn_Click"/>
+      MinHeight="259.268"
+        MaxHeight="259.268"
+        MinWidth="365.5"
+        MaxWidth="365.5"
+        Title="DeleteProduct" Height="259.268" Width="365.5" SizeToContent="WidthAndHeight" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" MouseDown="Window_MouseDown">
+
+    <Grid Margin="-37,-36,-75,-39">
+        <Grid HorizontalAlignment="Left" Height="207" Margin="48,81,0,0" VerticalAlignment="Top" Width="339" Background="#FFEBB16E"/>
+
+
+        <TextBox x:Name="prodName" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Margin="143,214,0,0"/>
+        <Button x:Name="removeBtn" Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="175,253,0,0" Click="removeBtn_Click" Height="20" Foreground="White">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFEB850F"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="2">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFB46A14"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="265,120,0,0" Click="backBtn_Click" Height="20" Foreground="White">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFEB850F"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="2">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFB46A14"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Grid HorizontalAlignment="Left" Height="50" Margin="87,159,0,0" VerticalAlignment="Top" Width="272" Background="#FFEB850F"/>
+
+        <Label Content="Input the name of the product you want &#xA;to remove:" HorizontalAlignment="Left" Margin="87,159,0,0" VerticalAlignment="Top" Height="50" Width="274" FontSize="14" Foreground="White" />
+        <Image HorizontalAlignment="Left" Height="100" Margin="38,36,0,0" VerticalAlignment="Top" Width="100" Source="/JGP_INVENTORY;component/Images/delete.png"/>
+
 
     </Grid>
+
 </Window>

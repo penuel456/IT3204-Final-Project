@@ -39,8 +39,16 @@ namespace JGP_INVENTORY.View
         }
         Registration registration = new Registration();
         Welcome welcome = new Welcome();
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+            //Close();
+        }
 
-        
+        private void Image_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             /*if (textBoxEmail.Text.Length == 0)
@@ -92,11 +100,18 @@ namespace JGP_INVENTORY.View
         
         }
 
-        private void buttonRegister_Click(object sender, RoutedEventArgs e)
+      
+
+        private void button1_Copy_Click(object sender, RoutedEventArgs e)
         {
             registration.Show();
             Close();
         }
 
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
     }
 }

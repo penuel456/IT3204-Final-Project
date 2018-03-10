@@ -4,13 +4,75 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:JGP_INVENTORY.View"
-      mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-      Title="Page1">
+      mc:Ignorable="d"
+      Title="Page1" Width="748.296" Height="298.295">
 
-    <Grid>
-        <Label x:Name="Welcome_Label" Content="Welcome User" HorizontalAlignment="Left" Height="35" Margin="10,22,0,0" VerticalAlignment="Top" Width="175" FontSize="18" Foreground="#FFD08805"/>
-        <Image HorizontalAlignment="Left" Height="49" Margin="165,201,0,0" VerticalAlignment="Top" Width="54" Source="/JGP_INVENTORY;component/Images/plus.png" RenderTransformOrigin="0.052,0.703"/>
+    <Grid Margin="4,0,-70,-57">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="92*"/>
+            <RowDefinition Height="71*"/>
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="197,98,0,107"
+Name="dataGridCustomers" Width="358" ItemsSource="{Binding Path=LoadDataBinding}"
+CanUserResizeRows="False" Background="#FFF6F6E2" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}" AlternatingRowBackground="#FFF6F6E2" RowBackground="#FFE5CF0B" Grid.RowSpan="2">
+
+            <DataGrid.Columns>
+
+
+                <DataGridTextColumn Binding="{Binding Path=prod_name}" Header="Product Name" Width="200"
+IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=prod_qty}" Header="Product Quantity" Width="150"
+IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Load Data" Height="23" HorizontalAlignment="Left" Margin="616,68,0,0"
+Name="btnloaddata" VerticalAlignment="Top" Width="68" Click="btnloaddata_Click" Foreground="White">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFEB850F"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="2">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFB46A14"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label x:Name="Welcome_Label" Content="Welcome User" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="175" FontSize="18" Foreground="#FFD08805" FontStyle="Italic"/>
+        <Image HorizontalAlignment="Left" Height="68" Margin="338,56,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="4.945,0.653" Grid.Row="1" MouseLeftButtonUp="Image_MouseLeftButtonUp" MouseLeftButtonDown="Image_MouseLeftButtonDown" >
+            <Image.Resources>
+                <Style TargetType="{x:Type Image}">
+                    <!-- Default image -->
+                    <Setter Property="Source" Value="/JGP_INVENTORY;component/Images/plus.png"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <!-- Hover image -->
+                            <Setter Property="Source" Value="/JGP_INVENTORY;component/Images/plus (2).png"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Resources>
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.488"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+       
+        <Label x:Name="Welcome_Label_Copy" Content="Products needed to be added" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="264" FontSize="16" Foreground="#FFD08805" Margin="82,63,0,0"/>
+        <Label x:Name="Welcome_Label_Copy1" Content="Add" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="264" FontSize="14" Foreground="#FF43B05C" Margin="352,120,0,0" Grid.Row="1" FontWeight="Bold" Background="{x:Null}"/>
 
     </Grid>
 </Page>
