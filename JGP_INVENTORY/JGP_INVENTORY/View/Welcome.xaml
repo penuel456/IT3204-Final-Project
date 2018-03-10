@@ -5,19 +5,18 @@
         MinWidth="900"
         MaxHeight="500"
         MaxWidth="900"
-        Title="Welcome" Height="500" Width="900
-        " WindowStyle="None" MouseDown="Window_MouseDown">
+        Title="Welcome" Height="500" Width="890.5" WindowStyle="None" MouseDown="Window_MouseDown" AllowsTransparency="True">
 
-    <StackPanel>
+    <StackPanel Margin="0,0,10,0">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="114*"/>
                 <RowDefinition Height="47*"/>
             </Grid.RowDefinitions>
-            <Grid HorizontalAlignment="Left" Height="466" Margin="114,26,0,-170.4" VerticalAlignment="Top" Width="779" Background="#FFF2F4E0" Grid.RowSpan="2"></Grid>
+            <Grid HorizontalAlignment="Left" Height="480" Margin="114,26,-14,-184" VerticalAlignment="Top" Width="790" Background="#FFF2F4E0" Grid.RowSpan="2"></Grid>
 
             <TextBlock Height="23" HorizontalAlignment="Left" Margin="90,10,0,0" x:Name="TextBlockName"  VerticalAlignment="Top" FontSize="15" FontStretch="ExtraCondensed" />
-            <Grid HorizontalAlignment="Left" Height="496" Margin="-3,0,0,-174.4" VerticalAlignment="Top" Width="117" Background="#FFE5CF0B" Grid.RowSpan="2">
+            <Grid HorizontalAlignment="Left" Height="506" Margin="-3,0,0,-184" VerticalAlignment="Top" Width="117" Background="#FFE5CF0B" Grid.RowSpan="2">
                 <Image HorizontalAlignment="Left" Height="66" Margin="25,68,0,0" VerticalAlignment="Top" Width="65" Source="/JGP_INVENTORY;component/Images/user.png"/>
             </Grid>
             <!--<Button Content="&#x9;Logout" Height="31" HorizontalAlignment="Left" Margin="-3,225,0,0" x:Name="logoutbtn" VerticalAlignment="Top" Width="117" Background="#FFE2B409" Foreground="#FFF0EEEE" BorderBrush="{x:Null}" />-->
@@ -65,7 +64,7 @@
                 </Button.Style>
             </Button>
             <Grid HorizontalAlignment="Left" Height="39" VerticalAlignment="Top" Width="117" Background="#FFEB850F" Margin="-3,-9,0,0">
-                <Grid HorizontalAlignment="Left" Height="47" Margin="117,-8,-780,0" VerticalAlignment="Top" Width="780" Background="#FFEBB16E">
+                <Grid HorizontalAlignment="Left" Height="47" Margin="117,-8,-787,0" VerticalAlignment="Top" Width="787" Background="#FFEBB16E">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="294*"/>
                         <ColumnDefinition Width="25*"/>
@@ -99,7 +98,7 @@
             <Image HorizontalAlignment="Left" Height="19" Margin="5,201,0,0" VerticalAlignment="Top" Width="20" Source="/JGP_INVENTORY;component/Images/shopping-cart.png"/>
             <Image HorizontalAlignment="Left" Height="16" Margin="7,232,0,0" VerticalAlignment="Top" Width="15" Source="/JGP_INVENTORY;component/Images/exit.png"/>
             <!--<Image HorizontalAlignment="Left" Height="19" Margin="719,4,0,0" VerticalAlignment="Top" Width="20" Source="/JGP_INVENTORY;component/Images/oc_share_close.png" RenderTransformOrigin="4.945,0.653" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>-->
-            <Image HorizontalAlignment="Left" Height="19" Margin="851,4,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="4.945,0.653" MouseLeftButtonDown="Image_MouseLeftButtonDown">
+            <Image HorizontalAlignment="Left" Height="19" Margin="869,5,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="4.945,0.653" MouseLeftButtonDown="Image_MouseLeftButtonDown">
                 <Image.Resources>
                     <Style TargetType="{x:Type Image}">
                         <!-- Default image -->
@@ -113,7 +112,7 @@
                     </Style>
                 </Image.Resources>
             </Image>
-            <Image HorizontalAlignment="Left" Height="19" Margin="822,4,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="4.945,0.653" MouseLeftButtonDown="Image_MouseLeftButtonDown_1" >
+            <Image HorizontalAlignment="Left" Height="19" Margin="840,5,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="4.945,0.653" MouseLeftButtonDown="Image_MouseLeftButtonDown_1" >
                 <Image.Resources>
                     <Style TargetType="{x:Type Image}">
                         <!-- Default image -->

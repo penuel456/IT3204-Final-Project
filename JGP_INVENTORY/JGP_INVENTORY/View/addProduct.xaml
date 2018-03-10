@@ -4,20 +4,66 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:JGP_INVENTORY.View"
-      mc:Ignorable="d" d:DesignWidth="283.902"
-      Title="addProduct" SizeToContent="Width" Height="321.053">
+      mc:Ignorable="d"
+        MinHeight="409.63"
+        MaxHeight="409.63"
+        MinWidth="420.03"
+        MaxWidth="420.03"
+      Title="addProduct" SizeToContent="Width" Height="392.847" Width="405.112" Background="{x:Null}" WindowStyle="None" Foreground="{x:Null}" AllowsTransparency="True" MouseDown="Window_MouseDown">
 
-    <Grid Margin="0,0,-0.4,-11.4">
-        <Label Content="Add Product" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Product Price" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,186,0,0"/>
-        <Label Content="Product Quantity" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,124,0,0"/>
-        <Label Content="Product Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,64,0,0"/>
+    <Grid Margin="54,51,73,6" Background="#FFEBB16E">
+        <Label Content="Product Price" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,186,0,0" Foreground="White"/>
+        <Label Content="Product Quantity" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,124,0,0" Foreground="White"/>
+        <Label Content="Product Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,64,0,0" Foreground="White"/>
         <TextBox x:Name="prodPrice" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text ="0" VerticalAlignment="Top" Width="120" Margin="142,186,0,0"/>
         <TextBox x:Name="prodName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="142,67,0,0"/>
-        <Button x:Name="insertBtn" Content="Insert" HorizontalAlignment="Left" Margin="104,234,0,0" VerticalAlignment="Top" Width="75" Click="insertBtn_Click_1"/>
-        <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" Margin="187,22,0,0" VerticalAlignment="Top" Width="75" Click="backBtn_Click"/>
+        <Button x:Name="insertBtn" Content="Add" HorizontalAlignment="Left" Margin="104,234,0,0" VerticalAlignment="Top" Width="75" Click="insertBtn_Click_1" Height="24" Foreground="White">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFEB850F"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="2">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFB46A14"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" Margin="187,22,0,0" VerticalAlignment="Top" Width="75" Click="backBtn_Click" Height="23" Foreground="White">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFEB850F"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="2">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFB46A14"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
         <TextBox x:Name="prodQty" HorizontalAlignment="Left" Height="23" Margin="142,124,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="notif" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,258,0,0" Width="252" Height="34" FontWeight="Bold" TextDecorations="Underline" FontSize="11" Foreground="#FFFA3434"/>
+        <TextBlock x:Name="notif" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,258,0,0" Width="252" Height="34" FontWeight="Bold" TextDecorations="Underline" FontSize="11" Foreground="#FFFA3434"><InlineUIContainer>
+                <Grid Height="100" Width="100"/>
+            </InlineUIContainer></TextBlock>
+        <Image HorizontalAlignment="Left" Height="94" Margin="-19,-35,0,0" VerticalAlignment="Top" Width="114" Source="/JGP_INVENTORY;component/Images/bag.png"/>
 
     </Grid>
 </Window>

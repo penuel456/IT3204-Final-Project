@@ -32,12 +32,7 @@ namespace JGP_INVENTORY.View
             InitializeComponent();
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            Close();
-        }
+       
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
@@ -53,10 +48,7 @@ namespace JGP_INVENTORY.View
             passwordBox1.Password = "";
             passwordBoxConfirm.Password = "";
         }
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
+      
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
@@ -80,5 +72,29 @@ namespace JGP_INVENTORY.View
             }
             errormessage.Text = text;
             }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
         }
+
+        private void Image_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+            //Close();
+        }
+
+        private void Submit_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            Close();
+        }
+    }
     }

@@ -52,5 +52,11 @@ namespace JGP_INVENTORY.View
             prodQty.Text = "0";
             prodPrice.Text = "0";
         }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
     }
 }

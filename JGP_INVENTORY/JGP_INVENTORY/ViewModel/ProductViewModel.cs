@@ -55,5 +55,9 @@ namespace JGP_INVENTORY.ViewModel
         {
             return crud.Login(User, Pass);
         }
+        public DataSet CallDisplayProdinNeed()
+        {
+            return crud.DisplayProdinNeed();
+        }
     }
 }

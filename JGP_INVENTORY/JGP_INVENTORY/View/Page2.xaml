@@ -39,14 +39,93 @@ IsReadOnly="True" />
             </DataGrid>
 
             <Button Content="Load Data" Height="23" HorizontalAlignment="Left" Margin="401,25,0,0"
-Name="btnloaddata" VerticalAlignment="Top" Width="68" Click="btnloaddata_Click"/>
+Name="btnloaddata" VerticalAlignment="Top" Width="68" Click="btnloaddata_Click" Foreground="White">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#FFEB850F"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="2">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FFB46A14"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
             <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="23" Margin="186,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-            <Button x:Name="searchBtn" Content="Search" HorizontalAlignment="Left" Margin="307,25,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="searchBtn_Click"/>
-            <Button x:Name="addBtn" Content="Add" HorizontalAlignment="Left" Margin="570,10,0,0" VerticalAlignment="Top" Width="75" Click="addBtn_Click" Height="23"/>
+            <Button x:Name="searchBtn" Content="Search" HorizontalAlignment="Left" Margin="307,25,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="searchBtn_Click" Foreground="White">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#FFEB850F"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="2">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FFB46A14"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
             <Button Content="Edit" Height="23" HorizontalAlignment="Left" Margin="483,25,0,0"
-                x:Name="editBtn" VerticalAlignment="Top" Width="68" Click="editBtn_Click"/>
+                x:Name="editBtn" VerticalAlignment="Top" Width="68" Click="editBtn_Click" Foreground="White">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#FFEB850F"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="2">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FFB46A14"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Grid>
-        <Button x:Name="deleteBtn" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="570,40,0,0" Height="24" Click="deleteBtn_Click"/>
+        <Button x:Name="deleteBtn" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="571,25,0,0" Height="24" Click="deleteBtn_Click" Foreground="White" RenderTransformOrigin="0.467,0.076">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFEB850F"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="2">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFB46A14"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
 
     </Grid>
 </Page>
