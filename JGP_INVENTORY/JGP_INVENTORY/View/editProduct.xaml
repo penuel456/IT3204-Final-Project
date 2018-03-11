@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JGP_INVENTORY.View"
         mc:Ignorable="d"
+         
         Title="editProduct" Height="427.841" Width="423.579" Background="{x:Null}" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown">
     <Grid Background="#FFE5CF0B" Margin="0,84,71,50" HorizontalAlignment="Right" Width="297">
         <Grid.ColumnDefinitions>
@@ -84,6 +85,5 @@
                 </Style>
             </Button.Style>
         </Button>
-
     </Grid>
 </Window>

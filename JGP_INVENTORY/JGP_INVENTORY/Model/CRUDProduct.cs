@@ -11,12 +11,21 @@ using System.Configuration;
 
 namespace JGP_INVENTORY.Model
 {
+    public class ProductData
+    {
+        public String prod_name { get; set; }
+        public int prod_qty { get; set; }
+        public int prod_price { get; set; }
+    }
+
     class CRUDProduct
     {
         MySqlConnection conn = new
         MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
         String query;
         String query2;
+
+        
 
         public String AddProduct(String prod_name, int prod_qty, int prod_price)
         {
@@ -55,6 +64,50 @@ namespace JGP_INVENTORY.Model
 
             }
         }
+
+        public List<ProductData> GetProductData(int prod_id)
+        {
+            var data = new List<ProductData>();
+            conn.Open();
+            query = "SELECT COUNT(*) FROM product WHERE prod_id = " + prod_id;
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.CommandType = CommandType.Text;
+
+            if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
+            {
+                query = "SELECT prod_name, prod_qty, prod_price FROM product WHERE prod_id = " + prod_id;
+
+                cmd = new MySqlCommand(query, conn);
+                cmd.CommandType = CommandType.Text;
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        data.Add(new ProductData
+                        {
+                            prod_name = reader.GetString(0),
+                            prod_qty = reader.GetInt32(1),
+                            prod_price = reader.GetInt32(2)
+                        });
+                    }
+                }
+            }
+            else
+            {
+                data.Add(new ProductData
+                {
+                    prod_name = "Data not found.",
+                    prod_qty = 0,
+                    prod_price = 0
+                });
+            }
+
+            conn.Close();
+            return data;
+        }
+
         public void EditProduct(int prod_id, String prod_name, String prod_qty, String prod_price)
         {
             query = "UPDATE product SET prod_name = '"+prod_name+"', prod_qty = "+prod_qty+", prod_price = "+prod_price+" WHERE prod_id = "+prod_id;
@@ -94,6 +147,18 @@ namespace JGP_INVENTORY.Model
             adp.Fill(ds, "LoadDataBinding");
             conn.Close(); 
             
+            return ds;
+        }
+        public DataSet DisplayProdinNeed()
+        {
+            query = "SELECT * FROM product WHERE prod_qty < 10 ORDER BY prod_qty ASC";
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adp.Fill(ds, "LoadDataBinding");
+            conn.Close();
+
             return ds;
         }
         public String Register(String User, String Password, String ConfirmPass)
