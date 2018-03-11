@@ -9,7 +9,7 @@ using JGP_INVENTORY.Model;
 
 namespace JGP_INVENTORY.ViewModel
 {
-
+    
     class ProductViewModel
     {
         CRUDProduct crud = new CRUDProduct();
@@ -53,6 +53,10 @@ namespace JGP_INVENTORY.ViewModel
         public DataSet CallDisplayProdinNeed()
         {
             return crud.DisplayProdinNeed();
+        }
+        public List<ProductData> CallGetProductData(int prod_id)
+        {
+            return crud.GetProductData(prod_id);
         }
     }
 }
