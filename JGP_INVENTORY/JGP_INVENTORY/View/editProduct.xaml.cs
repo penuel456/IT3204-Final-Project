@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using JGP_INVENTORY.ViewModel;
+using JGP_INVENTORY.Model;
+
 
 namespace JGP_INVENTORY.View
 {
@@ -24,7 +26,13 @@ namespace JGP_INVENTORY.View
         {
             InitializeComponent();
         }
-
+        private void clearContents()
+        {
+            prod_id.Text = "";
+            prod_name.Text = "";
+            prod_qty.Text = "";
+            prod_price.Text = "";
+        }
         ProductViewModel vm = new ProductViewModel();
 
         private void editBtn_Click(object sender, RoutedEventArgs e)
@@ -35,7 +43,20 @@ namespace JGP_INVENTORY.View
                 Hide();
             }
         }
+        private void getDataBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (prod_id.Text.ToString() != "")
+            {
+                var data = new List<ProductData>();
 
+                data = vm.CallGetProductData(Convert.ToInt32(prod_id.Text.ToString()));
+
+                prod_name.Text = Convert.ToString(data.ElementAt(0).prod_name);
+                prod_qty.Text = Convert.ToString(data.ElementAt(0).prod_qty);
+                prod_price.Text = Convert.ToString(data.ElementAt(0).prod_price);
+            }
+
+        }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
@@ -44,7 +65,13 @@ namespace JGP_INVENTORY.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            clearContents();
             Hide();
+        }
+
+        private void getDataBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
