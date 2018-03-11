@@ -34,7 +34,6 @@ namespace JGP_INVENTORY.View
             prod_name.Text = "";
             prod_qty.Text = "";
             prod_price.Text = "";
-            notif.Text = "";
         }
 
         private void editBtn_Click(object sender, RoutedEventArgs e)
@@ -44,10 +43,6 @@ namespace JGP_INVENTORY.View
                 vm.CallEditProduct(int.Parse(prod_id.Text), prod_name.Text, prod_qty.Text, prod_price.Text);
                 clearContents();
                 Hide();
-            }
-            else
-            {
-                notif.Text = "Please don't leave any fields empty.";
             }
         }
 
@@ -62,13 +57,8 @@ namespace JGP_INVENTORY.View
                 prod_name.Text = Convert.ToString(data.ElementAt(0).prod_name);
                 prod_qty.Text = Convert.ToString(data.ElementAt(0).prod_qty);
                 prod_price.Text = Convert.ToString(data.ElementAt(0).prod_price);
-
-                notif.Text = "Product Data retrieved";
             }
-            else
-            {
-                notif.Text = "Please input an ID";
-            }
+            
         }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)

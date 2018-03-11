@@ -109,3 +109,6 @@ D:\Users\bubbles\Documents\GitHub\IT3204-Final-Project\JGP_INVENTORY\JGP_INVENTO
 D:\Users\bubbles\Documents\GitHub\IT3204-Final-Project\JGP_INVENTORY\JGP_INVENTORY\obj\Debug\View\editProduct.g.cs
 D:\Users\bubbles\Documents\GitHub\IT3204-Final-Project\JGP_INVENTORY\JGP_INVENTORY\obj\Debug\View\editProduct.baml
 D:\Users\bubbles\Documents\GitHub\IT3204-Final-Project\JGP_INVENTORY\JGP_INVENTORY\obj\Debug\JGP_INVENTORY.csprojResolveAssemblyReference.cache
+C:\Users\penue\source\repos\JGP\JGP_INVENTORY\JGP_INVENTORY\obj\Debug\View\addProduct.g.cs
+C:\Users\penue\source\repos\JGP\JGP_INVENTORY\JGP_INVENTORY\obj\Debug\View\DeleteProduct.g.cs
+C:\Users\penue\source\repos\JGP\JGP_INVENTORY\JGP_INVENTORY\obj\Debug\View\editProduct.g.cs
