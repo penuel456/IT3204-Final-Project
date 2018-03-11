@@ -55,7 +55,7 @@
         </Button>
         <Rectangle HorizontalAlignment="Left" Height="192" Margin="17,35,0,0" VerticalAlignment="Top" Width="265" Fill="#FFEB850F" Grid.ColumnSpan="2"/>
         <Label Content="Product ID:" HorizontalAlignment="Left" Margin="28,43,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <TextBox x:Name="prod_id" Height="23" Margin="140,46,25,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="prod_id" HorizontalAlignment="Left" Height="23" Margin="140,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Grid.ColumnSpan="2"/>
         <Label Content="Product Name:" HorizontalAlignment="Left" Margin="28,84,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label Content="Product Quantity:" HorizontalAlignment="Left" Margin="28,123,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label Content="Product Price:" HorizontalAlignment="Left" Margin="28,165,0,0" VerticalAlignment="Top" Foreground="White"/>
@@ -63,27 +63,6 @@
         <TextBox x:Name="prod_qty" HorizontalAlignment="Left" Height="23" Margin="140,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Grid.ColumnSpan="2"/>
         <TextBox x:Name="prod_price" HorizontalAlignment="Left" Height="23" Margin="140,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Grid.ColumnSpan="2"/>
         <Image HorizontalAlignment="Left" Height="82" Margin="-19,-53,0,0" VerticalAlignment="Top" Width="92" Source="/JGP_INVENTORY;component/Images/edit.png"/>
-        <Button x:Name="getDataBtn" Content="Get Data" HorizontalAlignment="Left" Margin="215,46,0,0" VerticalAlignment="Top" Width="61" Height="23" Foreground="White" Grid.ColumnSpan="2" Click="getDataBtn_Click">
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="#FFE5CF0B"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}" CornerRadius="2">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#FF9E900F"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
 
     </Grid>
 </Window>
